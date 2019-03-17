@@ -10,13 +10,17 @@ export class AddTaskComponent implements OnInit {
   @Output() addTask = new EventEmitter();
   name: string;
   owner: string;
+  description: string;
   completed: boolean;
+  public now: Date = new Date();
   constructor() {}
   onSubmit() {
     const task = {
       name: this.name,
+      description: this.description,
       owner: this.owner,
-      completed: false
+      createdDate: this.now,
+      completed: 0
     };
     this.addTask.emit(task);
   }

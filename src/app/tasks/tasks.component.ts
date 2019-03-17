@@ -8,30 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
   tasks: Task[];
+  public now: Date = new Date();
 
   ngOnInit(): void {
     this.tasks = [
       {
-        name: 'name 1',
-        description: 'description 1',
+        name: 'Nazwa pierwszego zadania',
+        description: 'Opis pierwszego zadania',
         owner: 'owner 1',
-        completed: false
+        createdTime: this.now,
+        status: 1
       },
       {
-        name: 'name 2',
-        description: 'description 2',
+        name: 'Nazwa drugiego zadania',
+        description: 'Opis drugiego zadania 2',
         owner: 'owner 2',
-        completed: false
+        createdTime: this.now,
+        status: 1
       },
       {
-        name: 'name 3',
-        description: 'description 3',
+        name: 'Nazwa trzeciego zadania',
+        description: 'Opis trzeciego zadania',
         owner: 'owner 3',
-        completed: false
+        createdTime: this.now,
+        status: 1
       }
     ];
   }
   addTask(task: Task) {
     this.tasks.push(task);
+  }
+  showTaskDetails(task: Task) {
+    console.log(task);
   }
 }

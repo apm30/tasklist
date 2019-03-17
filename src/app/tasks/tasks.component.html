@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <ng-container *ngFor="let task of tasks">
-      <tr>
+      <tr (dblclick)="showTaskDetails(task)">
         <td>
           <span>{{task.name}}</span>
         </td>

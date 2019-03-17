@@ -1,10 +1,20 @@
 <form class="form" (ngSubmit)="onSubmit()">
-  <input type="text" name="name" [(ngModel)]="name">
-  <input type="text" name="owner" [(ngModel)]="owner">
-  <input type="checkbox" name="completed" [(ngModel)]="completed">
-
+  <div class="ms-TextField">
+    <label class="ms-Label">Nazwa:</label>
+    <input type="text" class="ms-TextField-field" name="name" [(ngModel)]="name">
+    <span class="ms-TextField-description">Wprowadź tytuł zadania</span>
+  </div>
+  <div class="ms-TextField">
+    <label class="ms-Label">Opis:</label>
+    <textarea [(ngModel)]="description" name="description" class="ms-TextField-field"></textarea>
+    <span class="ms-TextField-description">Wprowadź opis zadania</span>
+  </div>
+  <div class="ms-TextField">
+    <label class="ms-Label">Wykonawca:</label>
+    <input type="text" class="ms-TextField-field" name="owner" [(ngModel)]="owner">
+    <span class="ms-TextField-description">Wprowadź wykonawcę zadania</span>
+  </div>
   <button class="ms-Button ms-Button--primary">
     <span class="ms-Button-label">Zapisz</span>
   </button>
-  <!-- <input class="ms-button-label" type="submit" value="Submit"> -->
 </form>

@@ -2,5 +2,7 @@ export class Task {
   name: string;
   description: string;
   owner: string;
-  completed: boolean;
+  createdTime: Date;
+  completedTime?: Date;
+  status: number;
 }
