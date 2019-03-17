@@ -1,3 +1,4 @@
+import { StatusEnum } from './../status-enum';
 import { Task } from './../models/Task';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
@@ -20,7 +21,7 @@ export class AddTaskComponent implements OnInit {
       description: this.description,
       owner: this.owner,
       createdDate: this.now,
-      completed: 0
+      status: 0
     };
     this.addTask.emit(task);
   }

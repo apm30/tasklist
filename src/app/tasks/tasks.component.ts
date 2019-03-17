@@ -1,3 +1,4 @@
+import { StatusEnum } from './../status-enum';
 import { Task } from './../models/Task';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TasksComponent implements OnInit {
   tasks: Task[];
   public now: Date = new Date();
+  StatusValues = StatusEnum;
 
   ngOnInit(): void {
     this.tasks = [
