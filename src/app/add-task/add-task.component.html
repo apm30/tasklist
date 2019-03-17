@@ -1,0 +1,10 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <input type="text" name="name" [(ngModel)]="name">
+  <input type="text" name="owner" [(ngModel)]="owner">
+  <input type="checkbox" name="completed" [(ngModel)]="completed">
+
+  <button class="ms-Button ms-Button--primary">
+    <span class="ms-Button-label">Zapisz</span>
+  </button>
+  <!-- <input class="ms-button-label" type="submit" value="Submit"> -->
+</form>

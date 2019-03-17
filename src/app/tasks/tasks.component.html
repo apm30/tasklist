@@ -1,3 +1,26 @@
-<app-task *ngFor="let task of tasks" [task]="task">
+<app-add-task (addTask)="addTask($event)"></app-add-task>
 
-</app-task>
+<table class="ms-Table ms-Table--fixed">
+  <thead>
+    <tr>
+      <th>Nazwa Zadania</th>
+      <th>Status Zadania</th>
+      <th>Imie i nazwisko wykonawcy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let task of tasks">
+      <tr>
+        <td>
+          <span>{{task.name}}</span>
+        </td>
+        <td>
+          <span>{{task.completed}}</span>
+        </td>
+        <td>
+          <span>{{task.owner}}</span>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

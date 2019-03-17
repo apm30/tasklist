@@ -31,4 +31,7 @@ export class TasksComponent implements OnInit {
       }
     ];
   }
+  addTask(task: Task) {
+    this.tasks.push(task);
+  }
 }
