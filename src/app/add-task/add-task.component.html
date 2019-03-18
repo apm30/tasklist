@@ -1,20 +1,30 @@
-<form class="form" (ngSubmit)="onSubmit()">
+<form class="form" #myForm="ngForm" (ngSubmit)="onSubmit()">
   <div class="ms-TextField">
     <label class="ms-Label">Nazwa:</label>
-    <input type="text" class="ms-TextField-field" name="name" [(ngModel)]="name">
+    <input type="text" class="ms-TextField-field" name="name" [(ngModel)]="name" required>
     <span class="ms-TextField-description">Wprowadź tytuł zadania</span>
   </div>
   <div class="ms-TextField">
     <label class="ms-Label">Opis:</label>
-    <textarea [(ngModel)]="description" name="description" class="ms-TextField-field"></textarea>
+    <textarea [(ngModel)]="description" name="description" class="ms-TextField-field" required></textarea>
     <span class="ms-TextField-description">Wprowadź opis zadania</span>
   </div>
   <div class="ms-TextField">
     <label class="ms-Label">Wykonawca:</label>
-    <input type="text" class="ms-TextField-field" name="owner" [(ngModel)]="owner">
+    <input type="text" class="ms-TextField-field" name="owner" [(ngModel)]="owner" required>
     <span class="ms-TextField-description">Wprowadź wykonawcę zadania</span>
   </div>
-  <button class="ms-Button ms-Button--primary">
+  <div class="ms-TextField">
+    <label class="ms-Label">Status:</label>
+  </div>
+  <!-- <div class="ms-Dropdown">
+    <select>
+      <option *ngFor="let value of statusKeys(); let i = index;" [ngValue]="i">
+        {{statusValues[i]}}
+      </option>
+    </select>
+  </div> -->
+  <button type="submit" [disabled]="!myForm.form.valid" class="ms-Button ms-Button--primary">
     <span class="ms-Button-label">Zapisz</span>
   </button>
 </form>

@@ -1,6 +1,7 @@
 import { StatusEnum } from './../status-enum';
 import { Task } from './../models/Task';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { NullTemplateVisitor } from '@angular/compiler';
 
 @Component({
   selector: 'app-add-task',
@@ -12,8 +13,17 @@ export class AddTaskComponent implements OnInit {
   name: string;
   owner: string;
   description: string;
-  completed: boolean;
+  createdDate: Date;
+  completedDate: Date;
+  status: number;
   public now: Date = new Date();
+  statusValues = StatusEnum;
+  statusKeys(): Array<string> {
+    const keys = Object.keys(this.statusValues);
+    return keys.slice(keys.length / 2);
+  }
+  // ['status 1', 'status 2'];
+
   constructor() {}
   onSubmit() {
     const task = {
@@ -21,8 +31,10 @@ export class AddTaskComponent implements OnInit {
       description: this.description,
       owner: this.owner,
       createdDate: this.now,
+      completedDate: null,
       status: 0
     };
+
     this.addTask.emit(task);
   }
   ngOnInit() {}

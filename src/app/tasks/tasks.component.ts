@@ -11,6 +11,7 @@ export class TasksComponent implements OnInit {
   tasks: Task[];
   public now: Date = new Date();
   StatusValues = StatusEnum;
+  addTaskVisible: boolean;
 
   ngOnInit(): void {
     this.tasks = [
@@ -37,8 +38,13 @@ export class TasksComponent implements OnInit {
       }
     ];
   }
+  addTaskForm() {
+    this.addTaskVisible = true;
+  }
+
   addTask(task: Task) {
     this.tasks.push(task);
+    this.addTaskVisible = false;
   }
   showTaskDetails(task: Task) {
     console.log(task);

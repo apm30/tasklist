@@ -1,4 +1,8 @@
-<app-add-task (addTask)="addTask($event)"></app-add-task>
+<button class="ms-Button">
+  <span class="ms-Button-label" (click)="addTaskForm()">Nowe Zadanie</span>
+</button>
+
+<app-add-task *ngIf="addTaskVisible" (addTask)="addTask($event)"></app-add-task>
 
 <table class="ms-Table ms-Table--fixed">
   <thead>
